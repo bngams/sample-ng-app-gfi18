@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,23 +10,18 @@ export class ProductListComponent implements OnInit {
 
   products: any = new Array();
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.loadProducts();
   }
 
   loadProducts() {
-    this.products = this.products.concat([
-      {
-        id: 1,
-        name: 'Surface'
-      },
-      {
-        id: 2,
-        name: 'iMac'
-      }
-    ]);
+    // call service
+    this.productService.fetchProducts().subscribe(data => {
+      // response and treatment
+      this.products = this.products.concat(data);
+    });
   }
 
 }

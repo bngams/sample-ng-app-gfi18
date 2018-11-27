@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductsModule } from './products/products.module';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProductsModule } from './products/products.module';
     MaterialModule,
     ProductsModule,
     AppRoutingModule,
+    ShareModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

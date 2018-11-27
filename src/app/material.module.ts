@@ -7,23 +7,28 @@ import {
   MatCheckboxModule,
   MatToolbarModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatInputModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
+    BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
   ],
   exports: [
+    BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
   ],
   declarations: []
 })
