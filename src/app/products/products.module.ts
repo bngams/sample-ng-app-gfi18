@@ -11,6 +11,7 @@ import { ProductDashboardComponent } from './product-dashboard/product-dashboard
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductService } from './product.service';
 import { ShareModule } from '../share/share.module';
+import { PromoDirective } from './directives/promo.directive';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ShareModule } from '../share/share.module';
     ProductListComponent,
     ProductCardComponent,
     ProductDashboardComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    PromoDirective
   ],
   providers: [
     ProductService

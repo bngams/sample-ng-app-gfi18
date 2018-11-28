@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductsModule } from './products/products.module';
 import { ShareModule } from './share/share.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ShareModule } from './share/share.module';
     BrowserModule,
     MaterialModule,
     ProductsModule,
+    LoginModule,
     AppRoutingModule,
     ShareModule,
   ],
