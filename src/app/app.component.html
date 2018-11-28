@@ -1,8 +1,9 @@
 <mat-toolbar color="primary">
-  <span>Application Title</span>
+  <span id="title">Application Title</span>
   <span class="space"></span>
   <mat-icon class="menu-item" routerLink="/home" routerLinkActive="active">home</mat-icon>
-  <span class="menu-item">Right Aligned Text</span>
+  <span class="menu-item" routerLink="/products" routerLinkActive="active" *ngIf="isLoggedIn()" i18n="@@products.label">Products</span>
+  <span id="loginLink" class="menu-item" routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn()" i18n="@@login">Login</span>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

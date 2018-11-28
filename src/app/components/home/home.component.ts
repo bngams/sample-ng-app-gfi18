@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'src/app/message.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  msgList: Array<any> = new Array();
+  msgObservable: Subscription;
 
-  constructor() { }
+  constructor(private msgService: MessageService) { }
 
   ngOnInit() {
+    this.msgObservable = this.msgService.getSubjectMsg().subscribe(msg => {
+      this.msgList.push(msg.msg);
+    });
+  }
+
+  stopMsg() {
+    this.msgObservable.unsubscribe();
   }
 
 }

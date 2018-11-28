@@ -10,11 +10,21 @@ import { ProductsModule } from './products/products.module';
 import { ShareModule } from './share/share.module';
 import { LoginModule } from './login/login.module';
 
+// i18npipes
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { MessageService } from './message.service';
+import { TchatComponent } from './components/tchat/tchat.component';
+import { FormsModule } from '@angular/forms';
+// the second parameter 'fr' is optional
+registerLocaleData(localeFr);
+
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    TchatComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +33,9 @@ import { LoginModule } from './login/login.module';
     LoginModule,
     AppRoutingModule,
     ShareModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

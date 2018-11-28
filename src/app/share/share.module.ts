@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ApiService } from './api.service';
 import { TruncPipe } from './pipes/trunc.pipe';
+import { SecurityModule } from '../security/security.module';
 
 
 @NgModule({
@@ -8,10 +9,12 @@ import { TruncPipe } from './pipes/trunc.pipe';
     TruncPipe
   ],
   exports: [
-    TruncPipe
+    TruncPipe,
+    SecurityModule
   ],
   providers: [
     ApiService
-  ]
+  ],
+  imports: [SecurityModule]
 })
 export class ShareModule { }

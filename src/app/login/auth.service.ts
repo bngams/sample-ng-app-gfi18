@@ -10,6 +10,7 @@ export class AuthService {
   constructor() { }
 
   login() {
+    // http post api
     this.isLoggedIn = true;
   }
 

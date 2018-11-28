@@ -1,3 +1,9 @@
-<p>
-  home works!
-</p>
+<h1>Messages</h1>
+<button mat-raised-button color="primary" (click)="stopMsg()">Stop</button>
+<ul>
+  <li *ngFor="let msg of msgList">
+    {{msg}}
+  </li>
+</ul>
+
+<app-tchat></app-tchat>
